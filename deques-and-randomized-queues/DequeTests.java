@@ -11,7 +11,7 @@ class DequeTests {
     private Deque<String> deque;
 
     @BeforeEach
-    public void createDeque() {
+    void createDeque() {
         deque = new Deque<>();
     }
 
