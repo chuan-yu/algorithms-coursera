@@ -176,6 +176,12 @@ class DequeTests {
         }
     }
 
+    @Test
+    void removeFromDequeShouldThrow() {
+        deque.addFirst("test");
+        Iterator<String> itr = deque.iterator();
+        assertThrows(UnsupportedOperationException.class, () -> itr.remove());
+    }
 
     private String getFirst(Deque deque) {
         String firstItem = null;

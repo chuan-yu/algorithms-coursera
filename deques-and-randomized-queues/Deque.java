@@ -16,6 +16,9 @@ public class Deque<Item> implements Iterable<Item> {
         private Node current = first;
         public boolean hasNext() { return current != null; }
         public Item next() {
+            if (current == null) {
+                throw new NoSuchElementException("No more elements");
+            }
             Item item = current.item;
             current = current.next;
             return item;
