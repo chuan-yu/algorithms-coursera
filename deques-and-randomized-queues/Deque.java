@@ -6,13 +6,13 @@ public class Deque<Item> implements Iterable<Item> {
     private Node last;
     private int N;
 
-    class Node {
+    private class Node {
         Item item;
         Node next;
         Node previous;
     }
 
-    class DequeIterator implements Iterator<Item> {
+    private class DequeIterator implements Iterator<Item> {
         private Node current = first;
         public boolean hasNext() { return current != null; }
         public Item next() {
