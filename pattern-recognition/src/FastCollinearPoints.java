@@ -81,15 +81,9 @@ public class FastCollinearPoints {
                 next++;
             } else {
                 if (pointQueue.size() >= 4) {
-//                    Point[] collinearArray = convertToArray(pointQueue);
-//                    Merge.sort(collinearArray);
-//                    if (sortedPoints[0].compareTo(collinearArray[0]) < 0) {
-//                        lineSegments.enqueue(new LineSegment(collinearArray[0], collinearArray[collinearArray.length - 1]));
-//                    }
                     addLineSegment(lineSegments, sortedPoints[0], pointQueue);
                     pointQueue = new Queue<>();
                     pointQueue.enqueue(sortedPoints[0]);
-//                    lineSegments.enqueue(getLineSegment(convertToArray(pointQueue)));
                 } else {
                     current = next;
                     next = current + 1;
@@ -100,7 +94,6 @@ public class FastCollinearPoints {
         }
 
         if (pointQueue.size() >= 4) {
-//            lineSegments.enqueue(getLineSegment(convertToArray(pointQueue)));
             addLineSegment(lineSegments, sortedPoints[0], pointQueue);
         }
 
